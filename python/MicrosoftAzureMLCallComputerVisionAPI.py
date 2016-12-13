@@ -10,7 +10,7 @@ import json
 headers = {
     # Request headers
     'Content-Type': 'application/json',
-    'Ocp-Apim-Subscription-Key': 'KeyHelloGoodbye', # secret key1
+    'Ocp-Apim-Subscription-Key': 'HelloGoodBye', # secrect key 1
 }
 
 params = urllib.parse.urlencode({
@@ -20,8 +20,12 @@ params = urllib.parse.urlencode({
     'language': 'en',        
 })
 
-#def extend_dataframe(dataframe1):
-#    dataframe1.insert(loc=2, column='Description', value=u'')
+# add result columns to dataframe
+def extend_dataframe(df):
+    df.insert(loc=2, column='Description', value=u'')
+    df.insert(loc=3, column='Confidence', value=u'')
+    df.insert(loc=4, column='Categories', value=u'')
+    df.insert(loc=5, column='Score', value=u'')
 
 # The entry point function can contain up to two input arguments:
 #   Param<dataframe1>: a pandas.DataFrame
@@ -29,23 +33,18 @@ params = urllib.parse.urlencode({
 def azureml_main(dataframe1 = None, dataframe2 = None):
     try:
         conn = http.client.HTTPSConnection('api.projectoxford.ai')
-        # example
-        #conn.request("POST", "/vision/v1.0/analyze?%s" % params, "{'url':'http://unsplash.com/photos/98Rcate6GCU/download?force=true'}", headers)
-        dataframe1.insert(loc=2, column='Description', value=u'')
-        dataframe1.insert(loc=3, column='Confidence', value=u'')
+        # extend dataframe for result columns
+        extend_dataframe(dataframe1)
         for index, row in dataframe1.iterrows():
             body = "{'url':'"+row['url']+"'}"
-            #print(body)
             conn.request("POST", "/vision/v1.0/analyze?%s" % params, body, headers)                 
             response = conn.getresponse()
             data = response.read()
             parsed_json = json.loads(data.decode("UTF-8"))
-            #print(parsed_json)
-            #print(parsed_json["description"]["captions"][0]["text"])
-            #print(parsed_json["description"]["captions"][0]["confidence"])
-            #print(parsed_json["categories"])
             dataframe1.set_value(index,'Description',str(parsed_json["description"]["captions"][0]["text"]))
             dataframe1.set_value(index,'Confidence',str(parsed_json["description"]["captions"][0]["confidence"]))
+            dataframe1.set_value(index,'Categories',str(parsed_json["categories"][0]["name"]))
+            dataframe1.set_value(index,'Score',str(parsed_json["categories"][0]["score"]))
             #break
                     
         conn.close()
