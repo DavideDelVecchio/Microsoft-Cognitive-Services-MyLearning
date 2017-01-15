@@ -1,4 +1,4 @@
-# EXample Data for the Azure Cognitive Services Translator Text API 
+# Example Data for the Azure Cognitive Services Translator Text API 
 CREATE TABLE [dbo].[DetectLanguage](
 	[LineNo] [int] IDENTITY(1,1) NOT NULL,
 	[Textline] [nvarchar](max) NOT NULL,
@@ -11,7 +11,7 @@ ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 
 GO
 SET IDENTITY_INSERT [dbo].[DetectLanguage] ON 
-
+# Sample text from http://www.gutenberg.org/
 GO
 INSERT [dbo].[DetectLanguage] ([LineNo], [Textline]) VALUES (1, N'Vor vielen Jahren jagte einmal im Walde von Shimoda1 der Sohn eines Fürsten.')
 GO
