@@ -52,8 +52,8 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
         dataframe1.insert(loc=3, column='Translation', value=u'')
         for index, row in dataframe1.iterrows():
             #check if original language is supported
-            if souplangs.find(string=row['Iso6391']) is not None:
-                urlfull = "https://api.microsofttranslator.com/v2/http.svc/Translate?appid=Bearer "+mytoken+"&text="+row['Textline']+"&from="+row['Iso6391']+"&to=de"
+            if souplangs.find(string=row['Textline Iso6391 Name']) is not None:
+                urlfull = "https://api.microsofttranslator.com/v2/http.svc/Translate?appid=Bearer "+mytoken+"&text="+row['Textline']+"&from="+row['Textline Iso6391 Name']+"&to=de"
                 data = requests.get(urlfull)
                 #print(data.status_code +' '+data.headers['content-type']+' '+data.encoding+' '+data.text)            
                 souptrans = BeautifulSoup(data.text,"lxml")
