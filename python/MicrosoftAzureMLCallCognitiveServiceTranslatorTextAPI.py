@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 def get_token():
     headers = {
     # Request headers
-    'Ocp-Apim-Subscription-Key': 'str1HelloGoodBye', # secret key1
+    'Ocp-Apim-Subscription-Key': 'put_your_key1_here', # secret key1
     }
     
     params = urllib.parse.urlencode({
