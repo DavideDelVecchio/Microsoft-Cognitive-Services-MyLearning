@@ -10,7 +10,7 @@ import json
 headers = {
     # Request headers
     'Content-Type': 'application/json',
-    'Ocp-Apim-Subscription-Key': 'HelloGoodBye', # secrect key 1
+    'Ocp-Apim-Subscription-Key': 'put_your_key1_here', # secrect key 1
 }
 
 params = urllib.parse.urlencode({
