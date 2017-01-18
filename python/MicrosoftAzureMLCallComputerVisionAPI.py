@@ -1,7 +1,6 @@
 # The script MUST contain a function named azureml_main
 # which is the entry point for this module.
 
-# imports up here can be used to 
 import pandas as pd
 
 import http.client, urllib.request, urllib.parse, urllib.error, base64
@@ -39,12 +38,19 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
             body = "{'url':'"+row['url']+"'}"
             conn.request("POST", "/vision/v1.0/analyze?%s" % params, body, headers)                 
             response = conn.getresponse()
+            #print(response.status, response.reason)
             data = response.read()
             parsed_json = json.loads(data.decode("UTF-8"))
-            dataframe1.set_value(index,'Description',str(parsed_json["description"]["captions"][0]["text"]))
-            dataframe1.set_value(index,'Confidence',str(parsed_json["description"]["captions"][0]["confidence"]))
-            dataframe1.set_value(index,'Categories',str(parsed_json["categories"][0]["name"]))
-            dataframe1.set_value(index,'Score',str(parsed_json["categories"][0]["score"]))
+            if response.status == 200:                
+                # pretty print
+                #print (json.dumps(parsed_json, indent=4, sort_keys=True))
+            
+                dataframe1.set_value(index,'Description',str(parsed_json["description"]["captions"][0]["text"]))
+                dataframe1.set_value(index,'Confidence',str(parsed_json["description"]["captions"][0]["confidence"]))
+                dataframe1.set_value(index,'Categories',str(parsed_json["categories"][0]["name"]))
+                dataframe1.set_value(index,'Score',str(parsed_json["categories"][0]["score"]))
+            else:
+                print (json.dumps(parsed_json, indent=4, sort_keys=True))
             #break
                     
         conn.close()
@@ -52,7 +58,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
         print("[Errno {0}] {1}".format(e.errno, e.strerror))
         
     # Execution logic goes here
-    #print('Input pandas.DataFrame #1:\r\n\r\n{0}'.format(dataframe1))
+    print('Input pandas.DataFrame #1:\r\n\r\n{0}'.format(dataframe1))
 
     # If a zip file is connected to the third input port is connected,
     # it is unzipped under ".\Script Bundle". This directory is added
