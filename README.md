@@ -18,7 +18,7 @@ My simple scripts on learning Microsoft Azure Machine Learning and Cognitive Ser
 > * + New -> Intelligence + analytics - API type Translator Text API - Pricing Tier F0 Free
 > * + New -> Intelligence + analytics - Machine Learning Workspace - Workspace Pricing Tier Standard - Web Service Pricing Tier DevText Standard
 > * Create new experiment in Machine Learning Workspace
-> * Add the Enter Data Manually componente and copy the [example data] (https://github.com/AlexanderTodorovic/Microsoft-Cognitive-Services-MyLearning/blob/master/python/MicrosoftAzureMLCallCognitiveServiceTranslatorTextAPI_SampleData.csv) into the component
+> * Add the Enter Data Manually component and copy the [example data] (https://github.com/AlexanderTodorovic/Microsoft-Cognitive-Services-MyLearning/blob/master/python/MicrosoftAzureMLCallCognitiveServiceTranslatorTextAPI_SampleData.csv) into the component
 > * Add the Text Analytics -> Detect Language component
 > * Add the Execute Python Script component
 > * Copy key1 from your Text Translator API Service in the Azure Portal
