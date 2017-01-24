@@ -25,3 +25,6 @@ My simple scripts on learning Microsoft Azure Machine Learning and Cognitive Ser
 > * Copy your key1 in the [source code] (https://github.com/AlexanderTodorovic/Microsoft-Cognitive-Services-MyLearning/blob/master/python/MicrosoftAzureMLCallCognitiveServiceTranslatorTextAPI.py) 'Ocp-Apim-Subscription-Key': __'put_your_key1_here'__
 > * Add the source code (https://github.com/AlexanderTodorovic/Microsoft-Cognitive-Services-MyLearning/blob/master/python/MicrosoftAzureMLCallCognitiveServiceTranslatorTextAPI.py) to the Execute Python Script component
 > * Run the experiment
+
+### Developer Code of Conduct
+Developers using Cognitive Services, including this client library & sample, are expected to follow the “Developer Code of Conduct for Microsoft Cognitive Services”, found at http://go.microsoft.com/fwlink/?LinkId=698895.
