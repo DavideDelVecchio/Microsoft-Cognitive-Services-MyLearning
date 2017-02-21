@@ -7,7 +7,7 @@ My simple scripts on learning Microsoft Azure Machine Learning and Cognitive Ser
 > * + New -> Intelligence + analytics - API type Computer Vision API - Pricing Tier F0 Free
 > * [Login to Microsoft Azure Jupyter Notebooks] (https://notebooks.azure.com/)
 > * Choose Open in Jupyter or Add Notebooks
-> * Import the [Computer Vision API example notebook] (https://github.com/AlexanderTodorovic/Microsoft-Cognitive-Services-MyLearning/blob/master/python/notebooks/AzureCognitiveServicesComputerVisionAPI.ipynb)
+> * Import the [Computer Vision API example notebook] (https://github.com/AlexanderTodorovic/Microsoft-Cognitive-Services-MyLearning/blob/master/python/notebooks/0_AlexComputerVisionAPI_NoKey.ipynb)
 > * Copy from your Computer Vision API key1
 > * Put your key1 here -> Azure'Ocp-Apim-Subscription-Key': __'put_your_key1_here'__
 > * Go to Cell - Run All to run the notebook.
