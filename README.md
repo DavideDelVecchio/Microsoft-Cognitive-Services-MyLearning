@@ -1,7 +1,7 @@
 # Microsoft-Cognitive-Services-MyLearning
 My simple scripts on learning Microsoft Azure Machine Learning and Cognitive Services. Sample text data from http://www.gutenberg.org/ and images from https://unsplash.com/ .
 
-##### 1. How-to utilize the [Computer Vision API example notebook] (https://github.com/AlexanderTodorovic/Microsoft-Cognitive-Services-MyLearning/blob/master/python/notebooks/AzureCognitiveServicesComputerVisionAPI.ipynb)
+##### 1. How-to utilize the [Computer Vision API example notebook] (https://github.com/AlexanderTodorovic/Microsoft-Cognitive-Services-MyLearning/blob/master/python/notebooks/0_AlexComputerVisionAPI_NoKey.ipynb)
 > * [Free Azure account] (https://azure.microsoft.com/de-de/free/)
 > * [Login to Azure] (https://portal.azure.com)
 > * + New -> Intelligence + analytics - API type Computer Vision API - Pricing Tier F0 Free
